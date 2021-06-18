@@ -21,7 +21,7 @@ config :my_app, MyAppWeb.Endpoint,
   ]
 
 # Set path to cert folder
-config :my_app, :cert_path, "/home/Damon/site_encrypt_db"
+config :my_app, :cert_path, "/home/rsa-key-20210211/site_encrypt_db"
 
 # Set the cert mode so site_encrypt knows to hit live LetsEncrypt
 config :my_app, :cert_mode, "production"

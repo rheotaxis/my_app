@@ -11,8 +11,8 @@ defmodule MyAppWeb.Endpoint do
    def certification do
      SiteEncrypt.configure(
        client: :native,
-       domains: ["optimized.ml", "www.optimized.ml"],
-       emails: ["damonvjanis@gmail.com"],
+       domains: ["nfoil.info", "www.nfoil.info"],
+       emails: ["rheotaxis@gmail.com"],
        db_folder: Application.get_env(:my_app, :cert_path, "tmp/site_encrypt_db"),
        directory_url:
          case Application.get_env(:my_app, :cert_mode, "local") do
@@ -37,6 +37,18 @@ defmodule MyAppWeb.Endpoint do
     longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+
+  def www_redirect(conn, _options) do
+    if String.starts_with?(conn.host, "www.#{host()}") do
+      conn
+      |> Phoenix.Controller.redirect(external: "https://#{host()}")
+      |> halt()
+    else
+      conn
+    end
+  end
+
+  plug :www_redirect
 
   # Serve at "/" the static files from "priv/static" directory.
   #
