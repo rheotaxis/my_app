@@ -35,3 +35,7 @@ npm-debug.log
 
 # Ignore secrets file
 /config/*.secret.exs
+
+# Ignore local cert files
+/tmp/
+

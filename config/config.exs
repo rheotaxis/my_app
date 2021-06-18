@@ -12,8 +12,7 @@ config :my_app,
 
 # Configures the endpoint
 config :my_app, MyAppWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "f8MVhmeSUq4qW1POObdVHJCbU8xqld5747SRY6LYXRgu1ZO9JRUurtyQL5LLYz54",
+  url: [host: "nfoil.info"],
   render_errors: [view: MyAppWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: MyApp.PubSub,
   live_view: [signing_salt: "r/r96QH2"]
