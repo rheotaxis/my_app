@@ -1,10 +1,10 @@
 use Mix.Config
 
-# Configure your database
+# Configure your database (in dev.secret.exs)
 # config :my_app, MyApp.Repo,
 #   username: "postgres",
 #   password: "",
-#   database: "my_app_dev",
+#   database: "",
 #   hostname: "localhost",
 #   show_sensitive_data_on_connection_error: true,
 #   pool_size: 10
@@ -75,3 +75,7 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# Finally import the config/prod.secret.exs which loads secrets
+# and configuration from environment variables.
+import_config "dev.secret.exs"
