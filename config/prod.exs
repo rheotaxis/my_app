@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :my_app, MyAppWeb.Endpoint,
   url: [host: "nfoil.info", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   force_ssl: [hsts: true],
   http: [transport_options: [socket_opts: [:inet6]]],
